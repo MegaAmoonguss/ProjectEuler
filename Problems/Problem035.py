@@ -15,3 +15,4 @@ for p in primes:
         circular_primes.append(p)
 
 print(len(circular_primes))
+print(circular_primes)

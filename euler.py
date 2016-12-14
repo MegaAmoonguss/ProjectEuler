@@ -49,3 +49,9 @@ def rotations(s):
     for i in range(len(s)):
         rotations.append(s[-i:] + s[:-i])
     return rotations
+
+def word_value(w):
+    return sum([ord(c) - 64 for c in w])
+
+def is_triangle_number(n):
+    return sqrt(8 * n + 1) == int(sqrt(8 * n + 1))
