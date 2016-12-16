@@ -72,5 +72,8 @@ def word_value(w):
 def is_triangle_number(n):
     return sqrt(8 * n + 1) == int(sqrt(8 * n + 1))
 
+def is_pentagon_number(n):
+    return (1 + sqrt(24 * n + 1)) / 6 == int((1 + sqrt(24 * n + 1)) / 6)
+
 def is_palindrome(s):
     return s == s[::-1]
