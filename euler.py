@@ -21,6 +21,9 @@ def factor_sum(n):
     return total
 
 def is_prime(n):
+    if n == 1:
+        return False
+    
     for i in range(2, int(sqrt(abs(n))) + 1):
         if n % i == 0:
             return False
@@ -45,10 +48,12 @@ def fibonacci(max_value):
     
     return fib[len(fib) - 2]
 
-def prime_gen(max_value, start=2):
-    for n in range(start, max_value + 1):
+def prime_gen(start=2):
+    n = start
+    while True:
         if is_prime(n):
             yield n
+        n += 1
             
 def prime_list(max_value, start=2):
     primes = []
@@ -77,3 +82,14 @@ def is_pentagon_number(n):
 
 def is_palindrome(s):
     return s == s[::-1]
+
+def is_truncatable_prime(n):
+    if not is_prime(n):
+        return False
+    
+    for i in range(1, len(str(n))):
+        num1 = int(str(n)[-i:])
+        num2 = int(str(n)[:-i])
+        if not (is_prime(num1) and is_prime(num2)):
+            return False
+    return True
