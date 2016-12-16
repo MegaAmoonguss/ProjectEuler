@@ -7,9 +7,19 @@ def factor(n):
     for i in range(1, int(sqrt(n)) + 1):
         if n % i == 0:
             factors.append(i)
-            factors.append(int(n / i))
+            if i != n / i:
+                factors.append(int(n / i))
             
     return sorted(factors)
+
+def factor_sum(n):
+    total = 0
+    for i in range(1, int(sqrt(n)) + 1):
+        if n % i == 0:
+            total += i
+            if i != n / i and i != 1:
+                total += n / i
+    return total
 
 def is_prime(n):
     for i in range(2, int(sqrt(abs(n))) + 1):
@@ -55,3 +65,6 @@ def word_value(w):
 
 def is_triangle_number(n):
     return sqrt(8 * n + 1) == int(sqrt(8 * n + 1))
+
+def is_palindrome(s):
+    return s == s[::-1]
