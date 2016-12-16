@@ -1,6 +1,5 @@
 from math import sqrt
 
-# Methods
 def factor(n):
     factors = []
     
@@ -46,10 +45,17 @@ def fibonacci(max_value):
     
     return fib[len(fib) - 2]
 
-def prime_list(max_value):
-    for n in range(2, max_value + 1):
+def prime_gen(max_value, start=2):
+    for n in range(start, max_value + 1):
         if is_prime(n):
             yield n
+            
+def prime_list(max_value, start=2):
+    primes = []
+    for n in range(start, max_value + 1):
+        if is_prime(n):
+            primes.append(n)
+    return primes
 
 def calc_day(d, m, y, c):
     return (d + m + y + (y / 4) + c) % 7
