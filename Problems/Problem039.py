@@ -2,7 +2,7 @@ def main():
     max_num = 120
     max_tri = 3
      
-    for n in range(121, 1001):
+    for n in range(121, 1000):
         print(n)
         triangles = num_tri(n)
         if triangles > max_tri:
