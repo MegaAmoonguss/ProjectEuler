@@ -1,6 +1,4 @@
-from euler import is_prime
-from euler import rotations
-from euler import prime_list
+from euler import is_prime, rotations, prime_list
 
 circular_primes = []
 primes = prime_list(1000000)
