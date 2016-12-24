@@ -1,23 +1,14 @@
 def main():
-    coins = [200, 100, 50, 20, 10, 5, 2, 1]
-    num_coins = [1, 0, 0, 0, 0, 0, 0, 0]
+    target = 200
+    coins = [1, 2, 5, 10, 20, 50, 100, 200]
+    ways = [0 for _ in range(target+1)]
+    ways[0] = 1
     
-    count = 1
-    for i in range(len(num_coins)):
-        while True:
-            total = 0
-            for j in range(len(num_coins)):
-                total += num_coins[j] * coins[j]
+    for i in range(len(coins)):
+        for j in range(coins[i], target+1):
+            ways[j] += ways[j - coins[i]]
             
-            if total == 200:
-                count += 1
-                num_coins -= 1
-                break
-            elif total < 200:
-                num_coins[i] += 1
-            else:
-                num_coins[i] -= 1
-                break
+    print(ways[-1])
     
 if __name__ == '__main__':
     main()
