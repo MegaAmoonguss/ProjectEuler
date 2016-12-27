@@ -12,8 +12,7 @@ def main():
         
         if rank1 > rank2:
             p1_count += 1
-    
-    # prints 379, should be 376, have to figure out the few going wrong
+            
     print(p1_count)
     
 def rank(hand):
@@ -24,7 +23,7 @@ def rank(hand):
     ordered_values = sorted(values)
     straight = True
     for i in range(1, len(values)):
-        if ordered_values[i] != ordered_values[i-1]:
+        if ordered_values[i] != ordered_values[i-1] + 1:
             straight = False
             break
     
