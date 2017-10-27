@@ -122,5 +122,5 @@ def is_truncatable_prime(n):
     return True
 
 
-def parse_triangle(triangle):
-    return [[int(n) for n in s.split()] for s in triangle.split('\n') if s]
+def parse_triangle(triangle_str):
+    return [[int(n) for n in s.split()] for s in triangle_str.split('\n') if s]

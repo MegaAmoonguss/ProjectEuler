@@ -1,5 +1,5 @@
 def main():
-    with open('Inputs\p054_poker.txt') as file:
+    with open('inputs\p054_poker.txt') as file:
         contents = [line.rstrip().split() for line in file.readlines()]
     
     p1_count = 0

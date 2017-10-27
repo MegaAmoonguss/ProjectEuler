@@ -1,6 +1,6 @@
 from euler import word_value, is_triangle_number
 
-with open('Inputs\p042_words.txt') as file:
+with open('inputs\p042_words.txt') as file:
     words = [w[1:-1] for w in file.read().split(',')]
 
 count = 0
